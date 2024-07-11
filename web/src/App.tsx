@@ -5,7 +5,7 @@ import "./App.css";
 
 export type Message = {
   role: string;
-  text: string;
+  content: string;
 };
 
 const ChatInterface = () => {
@@ -32,7 +32,7 @@ const ChatInterface = () => {
     if (!loading && inputValue.trim()) {
       const newMessages = [
         ...messages,
-        { role: "user", text: inputValue.trim() },
+        { role: "user", content: inputValue.trim() },
       ];
       // Set current messages
       setMessages(() => newMessages);
@@ -52,7 +52,7 @@ const ChatInterface = () => {
       <div className="message-container">
         {messages.map((message, index) => (
           <div key={String(index + 1)} className={`message ${message.role}`}>
-            {message.text}
+            {message.content}
           </div>
         ))}
       </div>

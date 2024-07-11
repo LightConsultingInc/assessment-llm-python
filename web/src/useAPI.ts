@@ -11,7 +11,7 @@ export default function useAPI() {
     setError(null);
 
     try {
-      const response = await fetch("http://localhost:3000/api/messages", {
+      const response = await fetch("http://localhost:8000/api/messages", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
